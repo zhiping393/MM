@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+##
 
 ## Fastq reads download 
 accession_ID_SRA=xxx # e.g., accession_ID_SRA=SRR8709623 (A marine sediment metagenome: https://www.ncbi.nlm.nih.gov/sra/?term=SRR8709623)
