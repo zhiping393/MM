@@ -1,0 +1,5 @@
+SRA	sample_name
+SRR13258547	DeepSeaHydrothermalVents_JL125L_water
+SRR13258546	DeepSeaHydrothermalVents_JL125R_water
+SRR3136142	DeepSeaHydrothermalVents_SWIR-S021-M_sediment
+SRR3136143	DeepSeaHydrothermalVents_SWIR-S024-M_sediment
