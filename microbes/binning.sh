@@ -59,7 +59,15 @@ samtools sort ${sample_name}.bam -o ${sample_name}_sorted.bam
 #using metabate2
 mkdir bin_output
 jgi_summarize_bam_contig_depths --outputDepth depth.txt ${sample_name}_sorted.bam
-metabat2 -i $cont_name_tem -a depth.txt -m 1500 -s 10000 -t 40 -o bin_output/bin_${sample_name}
+# metabat2 -i $cont_name_tem -a depth.txt -m 1500 -s 10000 -t 40 -o bin_output/bin_${sample_name}
+#run metabat with different parameters from very stringent to very sensitive
+metabat2 --seed 12345 -t 40 --minContig 1500 -i $cont_name_tem -o  bin_output/bin_${sample_name}_CompOnly
+metabat2 --seed 12345 -t 40 --minContig 1500 -i $cont_name_tem -a depth.txt --maxP 50 --maxEdges 100 --minS 99 -o bin_output/bin_${sample_name}_SuperStringent
+metabat2 --seed 12345 -t 40 --minContig 1500 -i $cont_name_tem -a depth.txt --maxP 95 --maxEdges 200 --minS 60 -o bin_output/bin_${sample_name}_StandardNoAdd --noAdd
+metabat2 --seed 12345 -t 40 --minContig 1500 -i $cont_name_tem -a depth.txt --maxP 95 --maxEdges 200 --minS 60 -o bin_output/bin_${sample_name}_Standard
+metabat2 --seed 12345 -t 40 --minContig 1500 -i $cont_name_tem -a depth.txt --maxP 95 --maxEdges 500 --minS 60 -o bin_output/bin_${sample_name}_Sensitive
+metabat2 --seed 12345 -t 40 --minContig 1500 -i $cont_name_tem -a depth.txt --maxP 99 --maxEdges 500 --minS 60 -o bin_output/bin_${sample_name}_SuperSensitive
+
 
 #get the files produced that you need
 cp * $workDir
