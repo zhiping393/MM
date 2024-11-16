@@ -1,1 +1,1 @@
-Supporting codes for the paper "*Viral potential to modulate microbial methane metabolism varies by habitat*" at Nature Communications.
+Supporting codes for the manuscript Zhong ZP, Du J, Kostlbacher S, Pjevac P, Orlic S, Sullivan MB. 2024. Viral potential to modulate microbial methane metabolism varies by habitat. *Nature Communications* 15:1857.
